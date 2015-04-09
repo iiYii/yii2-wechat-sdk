@@ -111,8 +111,8 @@ echo $wechat->getMedia($media['media_id']) ? 'media下载成功' : 'media下载�
 ```
 
 支付使用示例
-```
-//在config/web.php配置文件中定义component配置信息(这种方式可以使用微信所有的接口)
+```php
+// 在config/web.php配置文件中定义component配置信息(这种方式可以使用微信所有的接口)
 'components' => [
   .....
   'wechat' => [
@@ -141,7 +141,7 @@ $wechat = Yii::createObject([
 
 // 扫码支付
 $wechat->setParameter("body", "贡献一分钱"); //商品描述
-//自定义订单号，此处仅作举例
+// 自定义订单号，此处仅作举例
 $timeStamp = time();
 $out_trade_no = "forecho" . "$timeStamp";
 $wechat->setParameter("out_trade_no", "$out_trade_no"); //商户订单号
@@ -153,22 +153,27 @@ var_dump($wechat->getpay());
 
 // 刷卡支付
 $wechat->setParameter("body", "贡献一分钱"); //商品描述
-//自定义订单号，此处仅作举例
+// 自定义订单号，此处仅作举例
 $timeStamp = time();
 $out_trade_no = "forecho" . "$timeStamp";
 $wechat->setParameter("out_trade_no", "$out_trade_no"); //商户订单号
 $wechat->setParameter("total_fee", "1"); //总金额
-//非必填参数，商户可根据实际情况选填
+// 非必填参数，商户可根据实际情况选填
 //$wechat->setParameter("sub_mch_id","XXXX");//子商户号
 $wechat->setParameter("device_info", "013467007045764"); //设备号
 $wechat->setParameter("auth_code", "130735422771146307"); //扫码支付授权码，设备读取用户微信中的条码或者二维码信息
-//$wechat->setParameter("attach","XXXX");//附加数据
-//$wechat->setParameter("time_start","XXXX");//交易起始时间
-//$wechat->setParameter("time_expire","XXXX");//交易结束时间
-//$wechat->setParameter("goods_tag","XXXX");//商品标记
-//$wechat->setParameter("openid","XXXX");//用户标识
-//$wechat->setParameter("product_id","XXXX");//商品ID
-print_r($wechat->getMicropay());
+// $wechat->setParameter("attach","XXXX");//附加数据
+// $wechat->setParameter("time_start","XXXX");//交易起始时间
+// $wechat->setParameter("time_expire","XXXX");//交易结束时间
+// $wechat->setParameter("goods_tag","XXXX");//商品标记
+// $wechat->setParameter("openid","XXXX");//用户标识
+// $wechat->setParameter("product_id","XXXX");//商品ID
+var_dump($wechat->getMicropay());
+
+// 查询订单
+$wechat->setParameter("out_trade_no", "2015040211155115034"); //商户订单号
+// $wechat->setParameter("out_trade_no", "1000990576201504030044223138"); //商户订单号
+var_dump($wechat->getOrderInfo());
 ```
 
 
