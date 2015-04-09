@@ -1,11 +1,11 @@
 <?php
-namespace callmez\wechat\sdk;
+namespace iiyii\wechat\sdk;
 
 use yii\base\Event;
 use yii\base\InvalidConfigException;
 use yii\base\InvalidParamException;
 use Yii;
-use callmez\wechat\sdk\WechatBasePay;
+use iiyii\wechat\sdk\WechatBasePay;
 use yii\web\HttpException;
 use yii\log\Logger;
 
@@ -13,7 +13,7 @@ use yii\log\Logger;
  * 微信公众号支付API类
  * 相关文档请参考 http://mp.weixin.qq.com/wiki 微信公众平台开发者文档
  *
- * @package callmez\wechat\components
+ * @package iiyii\wechat\components
  * @version 1.0.0alpha
  */
 class WechatPay extends WechatBasePay

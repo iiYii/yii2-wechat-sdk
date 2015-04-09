@@ -1,5 +1,5 @@
 <?php
-namespace callmez\wechat\sdk;
+namespace iiyii\wechat\sdk;
 
 use Yii;
 use yii\log\Logger;
@@ -7,7 +7,7 @@ use yii\base\Event;
 use yii\base\InvalidConfigException;
 use yii\base\InvalidParamException;
 use yii\web\HttpException;
-use callmez\wechat\sdk\WechatBasic;
+use iiyii\wechat\sdk\WechatBasic;
 
 class WechatBasePay extends WechatBasic
 {
